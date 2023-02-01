@@ -19,12 +19,16 @@
 
 
 ## sol 2
+import sys
+
 a, b = map(int, input().split())
 
-a_li = list(map(int, input().split()))
-b_li = list(map(int, input().split()))
+a_set = set(map(int, sys.stdin.readline().split()))
+b_set = set(map(int, sys.stdin.readline().split()))
 
-ab_li = list(a_li - b_li)
-ba_li = list(b_li - a_li)
+result = len(a_set - b_set) + len(b_set - a_set)
+print(result)
 
-print(len(ab_li) + len(ba_li))
+
+# 시간 감소 위해 1620 문제 참고
+# list - list 불가능 -> set으로!
