@@ -3,14 +3,37 @@ import sys
 # sentence = list(map(str, sys.stdin.readline().split('.')))
 # sentence = input().split('.')
 
-sentence =[]
+stack =[]
 while True:
-    b = sys.stdin.readline().split('.')
-    if b == '':
+    s = sys.stdin.readline().rstrip()
+    if s == '.':
         break
-    sentence.append(b)
+    
+    for i in s:
+        if i == '(' or i == '[':
+            stack.append(i)
+        elif i == ')':
+            try:
+                stack.remove('(')
+            except:
+                print('no')
+        elif i == ']':
+            try:
+                stack.remove('[')
+            except:
+                print('no')    
+    if stack:
+        print('no')
+    else:
+        print('yes')
 
-print(sentence)
+
+
+
+
+
+
+# print(sentence)
 
 # for i in sentence:
 #     a = sentence.count('(')
@@ -23,13 +46,13 @@ print(sentence)
 #         print('no')
 
 
-'''
-So when I die (the [first] I will see in (heaven) is a score list).
-[ first in ] ( first out ).
-Half Moon tonight (At least it is better than no Moon at all].
-A rope may form )( a trail in a maze.
-Help( I[m being held prisoner in a fortune cookie factory)].
-([ (([( [ ] ) ( ) (( ))] )) ]).
- .
-.
-'''
+# '''
+# So when I die (the [first] I will see in (heaven) is a score list).
+# [ first in ] ( first out ).
+# Half Moon tonight (At least it is better than no Moon at all].
+# A rope may form )( a trail in a maze.
+# Help( I[m being held prisoner in a fortune cookie factory)].
+# ([ (([( [ ] ) ( ) (( ))] )) ]).
+#  .
+# .
+# '''
