@@ -8,7 +8,7 @@ while True:
     s = sys.stdin.readline().rstrip()
     if s == '.':
         break
-    
+
     for i in s:
         if i == '(' or i == '[':
             stack.append(i)
@@ -33,17 +33,17 @@ while True:
 
 
 
-# print(sentence)
+# # print(sentence)
 
-# for i in sentence:
-#     a = sentence.count('(')
-#     b = sentence.count(')')
-#     c = sentence.count('[')
-#     d = sentence.count(']')
-#     if a == b and c == d:
-#         print('yes')
-#     else:
-#         print('no')
+#     for i in s:
+#         a = s.count('(')
+#         b = s.count(')')
+#         c = s.count('[')
+#         d = s.count(']')
+#         if a == b and c == d:
+#             print('yes')
+#         else:
+#             print('no')
 
 
 # '''
