@@ -1,5 +1,18 @@
 import sys
 
+def compare(a, b, N):
+    rank_lst = [1] * N
+    dc_lst = []
+    idx_1st = 0
+
+    for i in range(N):
+        if a[0] > b[0] and a[1] > b[1]:
+            rank_lst[idx_1st] += 1
+            idx_1st = i
+        elif a[0] < b[0] and a[1] < b[1]:
+            rank_lst[i] += 1
+    
+
 N = int(input())
 # w_lst = []
 # h_lst = []
