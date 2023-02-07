@@ -4,9 +4,25 @@ N = int(input())
 # w_lst = []
 # h_lst = []
 rank_lst = [1] * N
+dc_lst = []
 
 for n in range(N):
     dc = tuple(map(int, sys.stdin.readline().split()))
+    dc_lst.append(dc)
+
+    idx_1st = 0
+    for i in range(N):
+        if dc_lst[i][0] > dc[idx_1st][0] and dc_lst[i][1] > dc[idx_1st][1]:
+            rank_lst[idx_1st] += 1
+            idx_1st = i
+        elif dc_lst[i][0] < dc[idx_1st][0] and dc_lst[i][1] < dc[idx_1st][1]:
+            rank_lst[i] += 1
+        # else:
+        #     if
+
+
+
+
     # w_lst.append(dc[0])
     # h_lst.append(dc[1])
 

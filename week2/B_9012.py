@@ -1,19 +1,20 @@
 T = int(input())
 
 for tc in range(T):
-    stack = []
     ps = input()
+    stack = []
     
     for n in ps:
         if n == '(':
             stack.append(n)
         elif n == ')':
-            if stack[-1] == '(':
+            if len(stack) != 0 and stack[-1] == '(':
                 stack.pop()
             else:
                 stack.append(n)
+                break
     
-    if not stack:
+    if len(stack) == 0:
         print('YES')
     else:
         print('NO')
