@@ -17,12 +17,6 @@ def d(n):
         res_n += int(str(n)[i])     # n을 str으로 바꿔서 각 자릿수를 다시 int로 변환해서 res_n에 더하기
     return res_n                    # res_n은 생성자
 
-# print(d(33))
-
-
-# for i in range(1, 20):
-#     print(d(i))
-
 
 
 
