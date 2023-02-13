@@ -14,15 +14,17 @@ print(max(result_lst))                      # 리스트 내부 값 중 최대값
 
 
 
-## 처음에 비트 연산 통해서 풀어보려 했으나 완벽하게 이해하지 못해서 실패,,
+# 처음에 비트 연산 통해서 풀어보려 했으나 완벽하게 이해하지 못해서 실패,,
 
-# for i in range(1<<N):
-#     sum_n = 0
-#     # for j in range(N):
-#     if i & (1<<3):
-#         sum_n += num_lst[3]
-#     result_lst.append(sum_n)
-#     # if sum(tmp) <= M:
-#         # result_lst.append(sum(tmp))
-# print(result_lst)
-# print(max(result_lst))
+for i in range(1<<N):
+    sum_n = 0
+    # for j in range(N):
+    if i & (1<<3):
+        sum_n += num_lst[3]
+    result_lst.append(sum_n)
+    # if sum(tmp) <= M:
+        # result_lst.append(sum(tmp))
+print(result_lst)
+print(max(result_lst))
+
+
