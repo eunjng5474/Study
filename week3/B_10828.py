@@ -1,11 +1,3 @@
-
-# def inp(*args):
-#     try:
-#         inp_str = sys.stdin.readline().split()
-#     except:
-#         inp_str = input().split()
-#     return inp_str
-
 import sys
 
 N = int(input())
@@ -39,3 +31,14 @@ for n in range(N):
             print(stack[-1])
         else:
             print(-1)
+
+
+
+# def inp(*args):
+#     try:
+#         inp_str = sys.stdin.readline().split()
+#     except:
+#         inp_str = input().split()
+#     return inp_str
+
+##### sys.stdin 쓰면 입력값 개수 안 정해져있어도 됨
