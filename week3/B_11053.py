@@ -6,15 +6,27 @@ stack_lst = []
 # stack.append(ai[0])
 # for i in range(len(ai)):
 
+# for i in range(N):
+#     for j in range(i+1, N):
+#         if len(stack) == 0:
+#             stack.append(ai[i])
+#         elif ai[j] > stack[-1]:
+#             stack.append(ai[j])
+#         stack_lst.append(stack)
+
+
+
 i = 0
 while i < N:
-    if i == 0:
+    if len(stack) == 0:
         stack.append(ai[i])
     elif ai[i] > stack[-1]:
         stack.append(ai[i])
     stack_lst.append(stack)
+    # stack = []
     i += 1
 
+print(stack_lst)
 result = 0
 for s in stack_lst:
     if len(s) > result:
