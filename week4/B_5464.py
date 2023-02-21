@@ -6,7 +6,7 @@ N, M = map(int, input().split())
 # cars = x for 
 parking = {}
 cars = {}
-park_lst = [0] * N
+park_lst = deque()
 q = deque()
 result = 0
 
@@ -22,13 +22,19 @@ for i in range(2*M):
     x = int(input())
 
     if x > 0:
-        q.append(x)
-        if 0 in park_lst:
-            pass
-        result += (parking[x] * cars[x])
+        if len(park_lst) == N:
+            q.append(x)
+        else: 
+            ## 리스트에서 빈 자리에 왼쪽부터 넣도록 수정
+            park_lst.append(x)
+            result += (parking[x] * cars[x])
     else:
         x = abs(x)
-        x_idx = q.index(x)
-        q.pop(x_idx)
+        x_idx = park_lst.index(x)
+        park_lst.pop(x_idx)
+        # incar = q.popleft()
+        # park_lst.append(incar)
+        # result += (parking[incar] * cars[incar])
 
+print(result)
 
