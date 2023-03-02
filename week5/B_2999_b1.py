@@ -7,7 +7,6 @@ for r in range(N, 0, -1):
         C = N//r
         break
 
-# arr = [['']*C for _ in range(R)]
-
-for c in range(C):
-    print(txt[c])
+for r in range(R):
+    for c in range(C):
+        print(txt[r+(R*c)], end='')
