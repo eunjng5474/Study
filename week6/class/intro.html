@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- html 문서의 정보-->
+    <meta />
+    <title>intro</title>
+    <!--내부참조-->
+    <style>
+      .information {
+        color: red;
+        font-weight: bold;
+      }
+      .discription {
+        color: blue;
+      }
+      .information.discription {
+        color: green;
+      }
+
+      #name_text {
+        color: black;
+      }
+      p {
+        color: skyblue;
+      }
+      a[href="text"] {
+        margin: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="name" />
+    <p class="information" id="name_text">name</p>
+    <p class="information">age</p>
+    <p class="information discription">address</p>
+    <!--두 class에 적용되는 속성 모두 적용. 파란색 굵은 글씨 -->
+    <!-- 두 클래스의 위치 바꿔도 그대로. 위에서 선언한 순서가 중요-->
+    <!-- 인라인 -->
+    <p class="discription">introduce</p>
+    <p style="color: orange">Orange</p>
+    <!-- ul 부모의 자식 li-->
+    <!-- ul>li.item*4{item $}-->
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+    <!-- semantic tag -->
+    <header></header>
+    <header-text> 대제목의 본문을 작성한다. </header-text>
+    <article></article>
+    <section></section>
+    <input type="text" />
+    <p>대제목 <span style="font-weight: bold">굵게 하고 싶은 글</span></p>
+    <h1>대제목</h1>
+    <h2>중제목</h2>
+    <h3>소제목</h3>
+    <p>본문</p>
+    <aside></aside>
+    <footer></footer>
+  </body>
+</html>
