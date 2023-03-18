@@ -18,6 +18,7 @@ def solution(numbers):
     # permutations(iterable, r) -> 길이가 r인 순열로 반환
     # [['1', '7'], ['71', '17']]
     num = list(set(map(int, set(sum(nums, [])))))
+    print(num)
     # [1, 7, 17, 71]
 
     for n in num:
