@@ -57,6 +57,3 @@ print(max_sum)
 print(min_sum)
 
 
-# for d in range(N):
-# for c in range(4):
-
