@@ -1,23 +1,31 @@
-############ 수정하기
-
+import sys
+input = sys.stdin.readline
 
 N, S = map(int, input().split())
 nums = list(map(int, input().split()))
 
+left = 0
+right = 0
 sum_n = 0
-end = 0
-result = N
+result = 1000000
 
-for start in range(N):
-    cnt = 1
-    while sum_n < S and end < N:
-        sum_n += nums[end]
-        end += 1
+while True:
     if sum_n >= S:
-        cnt += 1
-        result = min(cnt, result)
-    sum_n -= nums[start]
+        result = min(result, right - left)
+        # 합에서 left 인덱스의 수 뺀 후, 다음 인덱스부터 진행하도록
+        sum_n -= nums[left]
+        left += 1
 
+    elif right == N:
+        break
 
+    else:
+        # right 인덱스 값 더하고 right += 1을 통해 마지막 위치 이동
+        sum_n += nums[right]
+        right += 1
 
-print(result)
+if result == 1000000:
+    print(0)
+else:
+    print(result)
+
