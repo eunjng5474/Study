@@ -41,7 +41,7 @@ while K:
                 ll = len(board[i][j])
                 odd_cnt = 0
                 even_cnt = 0
-                for p in board[i][j]:
+                for p in board[i][j]:   # 모든 값들의 질량, 속력은 + 하고, 방향 탐색 위해 방향의 홀짝 여부 구하기
                     mm += p[0]
                     ss += p[1]
                     if p[2] % 2:
@@ -49,11 +49,13 @@ while K:
                     else:
                         even_cnt += 1
 
+                # 다 홀수거나 짝수면 dd = 0으로 해서 이후 0, 2, 4, 6으로 되도록
+                # 아닌 경우 dd = 1이니까 1, 3, 5, 7이 됨
                 if odd_cnt == ll or even_cnt == ll:
                     dd = 0
 
                 board[i][j] = []
-                for d in range(4):
+                for d in range(4):      # 여기서 dd + 2*d
                     board[i][j].append([mm//5, ss//ll, dd+2*d])
 
     # board에만 바뀐 값 저장되어 있으므로 arr에 저장하기
