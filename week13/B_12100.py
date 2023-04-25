@@ -5,8 +5,12 @@ result = 0
 dx = [-1, 1, 0, 0]  # 상하좌우
 dy = [0, 0, -1, 1]
 
-# def move(d):
-#     if d == 0:
+def move(d):
+    if d == 0:
+        for x in range(N):
+            for y in range(N):
+                if arr[x][y]:
+                    if arr[x-1][y]
 
 
 
