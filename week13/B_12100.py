@@ -10,7 +10,7 @@ def move(d):
         for x in range(N):
             for y in range(N):
                 if arr[x][y]:
-                    if arr[x-1][y]
+                    if arr[x+1][y] == arr[x][y]
 
 
 
