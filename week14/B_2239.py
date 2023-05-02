@@ -34,7 +34,7 @@ def check(arr):
         return
 
     # 사각형 확인
-    
+
 
 
 
