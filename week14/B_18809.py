@@ -63,8 +63,11 @@ def spread():
                 elif ground[nx][ny][1] == ground[x][y][1]+1 and ground[nx][ny][0] != ground[x][y][0]:
                     ground[nx][ny] = [3, 0]
                     flower_cnt += 1
-                    q.append((nx, ny))
+                q.append((nx, ny))
 
+        for g in ground:
+            print(g)
+        print()
     return flower_cnt
 
 
