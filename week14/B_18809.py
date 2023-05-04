@@ -2,39 +2,32 @@ import sys
 input = sys.stdin.readline
 # from copy import deepcopy
 from collections import deque
+from itertools import combinations
+
 
 N, M, G, R = map(int, input().split())
 arr = [list(map(int, input().split())) for _ in range(N)]
-ground = [[[0, 0] for _ in range(M)] for _ in range(M)]
+ground = [[[0, 0] for _ in range(M)] for _ in range(N)]
+possible = []
+
 for n in range(N):
     for m in range(M):
-        if arr[n][m]:
-            ground[n][m][0] = arr[n][m]
+        # if arr[n][m]:
+        #     ground[n][m][0] = arr[n][m]
+        if arr[n][m] == 2:
+            possible.append((n, m))
 
 result = 0
 
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 
-# 배양액 뿌리기
-def baeyang(g_cnt, r_cnt):
-    global result
-    if g_cnt == 0 and r_cnt == 0:
-        cnt = spread()
-        result = max(result, cnt)
-        return
 
-    for n in range(N):
-        for m in range(M):
-            if arr[n][m] == 2 and not ground[n][m][0]:
-                if g_cnt:
-                    ground[n][m] = [1, 0]
-                    baeyang(g_cnt-1, r_cnt)
-                    ground[n][m] = [0, 0]
-                if r_cnt:
-                    ground[n][m] = [2, 0]
-                    baeyang(g_cnt, r_cnt-1)
-                    ground[n][m] = [0, 0]
+# 배양액 뿌리는 거 조합 사용
+for comb in combinations(possible, G+R):
+    for green in combinations(comb, G):
+
+
 
 # 퍼뜨리기
 def spread():
@@ -71,7 +64,7 @@ def spread():
     return flower_cnt
 
 
-baeyang(G, R)
+# baeyang(G, R)
 print(result)
 # # 꽃 피우기
 # def flower():
@@ -88,4 +81,29 @@ print(result)
 
     # for n in range(N):
     #     for m in range(M):
+
+
+
+
+
+
+# 배양액 뿌리기
+# def baeyang(g_cnt, r_cnt):
+#     global result
+#     if g_cnt == 0 and r_cnt == 0:
+#         cnt = spread()
+#         result = max(result, cnt)
+#         return
+#
+#     for n in range(N):
+#         for m in range(M):
+#             if arr[n][m] == 2 and not ground[n][m][0]:
+#                 if g_cnt:
+#                     ground[n][m] = [1, 0]
+#                     baeyang(g_cnt-1, r_cnt)
+#                     ground[n][m] = [0, 0]
+#                 if r_cnt:
+#                     ground[n][m] = [2, 0]
+#                     baeyang(g_cnt, r_cnt-1)
+#                     ground[n][m] = [0, 0]
 
