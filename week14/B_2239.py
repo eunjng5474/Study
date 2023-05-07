@@ -25,10 +25,7 @@ def square_check(row, col, num):    # 사각형 확인
                 return False
     return True
 
-<<<<<<< HEAD
-    # 사각형 확인
 
-=======
 
 def dfs(idx):
     if idx == len(zero_idx):  # 0인 값 다 채웠으면 프린트하고 함수 종료
@@ -44,7 +41,6 @@ def dfs(idx):
             arr[x][y] = n
             dfs(idx+1)
             arr[x][y] = 0
->>>>>>> 3b5106d046e80dc45f678f746897e7bb9b8cb495
 
 
 
